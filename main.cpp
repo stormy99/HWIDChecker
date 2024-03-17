@@ -9,6 +9,17 @@ GPUInfo gpuInfo;
 MOBOInfo moboInfo;
 RAMInfo ramInfo;
 
+bool isVCRedistInstalled() {
+    // This is a simplified example. Checking specific registry keys or DLL existence
+    // related to the redistributable might be required for a thorough verification.
+    HMODULE hMod = LoadLibrary(TEXT("vcruntime140.dll"));
+    if (hMod) {
+        FreeLibrary(hMod);
+        return true;
+    }
+    return false;
+}
+
 // Displays ASCII art
 void displayTitle() {
     std::system("cls"); // Clear the screen for a clean menu display
@@ -72,6 +83,15 @@ void exportToText() {
 }
 
 int main() {
+
+    if (!isVCRedistInstalled()) {
+        std::cerr << "Visual C++ Redistributable 2015-2022 is required to run this application.\n";
+        std::cerr << "Please download and install it from: https://aka.ms/vs/17/release/vc_redist.x64.exe\n";
+        // Optionally, open the download URL in the default browser (Windows-specific)
+        ShellExecute(0, 0, L"https://aka.ms/vs/17/release/vc_redist.x64.exe", 0, 0, SW_SHOW);
+        return 1;
+    }
+
     SetConsoleTitle(L"HWIDChecker");
     displayTitle();
 
