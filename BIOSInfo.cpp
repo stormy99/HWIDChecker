@@ -95,4 +95,3 @@ bool BIOSInfo::queryBIOSUUID() {
 void BIOSInfo::displayBIOSInfo() const {
     std::cout << "SYS-BIOS UUID: " << biosUUID << "\n\n";
 }
-

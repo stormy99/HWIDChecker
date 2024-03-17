@@ -19,5 +19,3 @@
 #include <windows.h>
 
 #endif
-
-

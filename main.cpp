@@ -18,7 +18,7 @@ void displayTitle() {
  / _  /| |/ |/ // // // / / /__/ _  / _// /__/ ,< / _// , _/
 /_//_/ |__/|__/___/____/  \___/_//_/___/\___/_/|_/___/_/|_|                                                  
 )";
-    std::this_thread::sleep_for(std::chrono::seconds(2)); // Sleep for 1 second
+    std::this_thread::sleep_for(std::chrono::seconds(1));
 }
 
 // Displays the main menu and handles user input
@@ -116,4 +116,3 @@ int main() {
 
     return 0;
 }
-

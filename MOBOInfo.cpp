@@ -131,6 +131,3 @@ void MOBOInfo::displayMOBOInfo() const {
 
     std::cout << "\n";
 }
-
-
-

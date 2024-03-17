@@ -120,5 +120,3 @@ void GPUInfo::displayGPUInfo() const {
         std::cout << "GPU information not available.\n";
     }
 }
-
-
