@@ -53,9 +53,14 @@ void exportToText() {
     moboInfo.displayMOBOInfo();
     ramInfo.displayRAMInfo();
 
-    std::cout.rdbuf(oldCoutStreamBuf); // Restore std::cout's original stream buffer
+    // Restore std::cout's original stream buffer
+    std::cout.rdbuf(oldCoutStreamBuf);
 
-    std::ofstream file("hardware_info.txt");
+    // Open the file for output with UTF-8 encoding
+    std::ofstream file("hardware_info.txt", std::ios::out | std::ios::binary); // Use binary mode to prevent transformations
+    // Ensure the stream uses UTF-8 encoding
+    file.imbue(std::locale(file.getloc(), new std::codecvt_utf8<char>));
+
     if (file.is_open()) {
         file << strCout.str();
         file.close();

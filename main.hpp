@@ -9,10 +9,12 @@
 #include "MOBOInfo.hpp"
 #include "RAMInfo.hpp"
 
+#include <codecvt>
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <limits>
+#include <locale>
 #include <sstream>
 #include <string>
 #include <thread>
