@@ -1,0 +1,8 @@
+v1.0.1:
+- Add pre-requisite check for MVCPP redist.
+- Fix .gitignore to include `.sln` and `.vcxproj` files
+- Fix UTF-8 text encoding
+
+
+v1.0.0:
+- Setup initial project
